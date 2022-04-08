@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <form action="search">
+        <input type="text" placeholder="Search..." name="keyword"></input>
+    </form>
+
+    Index of {{ dirname }}
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Date</td>
+        </tr>
+        {% for f in files %}
+        <tr>
+            <td><a href={{ f.link }}>{{ f.name }}</a></td>
+            <td>{{ f.size }}</td>
+            <td>{{ f.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
